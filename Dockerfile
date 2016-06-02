@@ -2,7 +2,7 @@
 # SBT image based on Openjdk 8
 #
 
-FROM java:8-jre-alpine
+FROM java:8-jdk-alpine
 MAINTAINER Sagacify Devops Team <dev@sagacify.com>
 
 ENV SBT_VERSION 0.13.11
