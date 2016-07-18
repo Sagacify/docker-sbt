@@ -10,7 +10,7 @@ ENV SBT_HOME /usr/local/sbt
 ENV PATH ${PATH}:${SBT_HOME}/bin
 
 # Install bash
-RUN set -x && apk add --no-cache bash
+RUN set -x && apk add --no-cache bash git
 
 # Install sbt
 RUN wget -q -O - "http://dl.bintray.com/sbt/native-packages/sbt/$SBT_VERSION/sbt-$SBT_VERSION.tgz" | gunzip | tar -x -C /usr/local && \
