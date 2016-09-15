@@ -14,6 +14,8 @@ RUN set -x && apk add --no-cache bash git
 
 # Install sbt
 RUN wget -q -O - "http://dl.bintray.com/sbt/native-packages/sbt/$SBT_VERSION/sbt-$SBT_VERSION.tgz" | gunzip | tar -x -C /usr/local && \
+    mkdir -p ~/.sbt/0.13/plugins && \
+    echo 'addSbtPlugin("com.eed3si9n" % "sbt-assembly" % "0.14.3")' >> ~/.sbt/0.13/plugins/build.sbt && \
     sbt --about
 
 WORKDIR /app

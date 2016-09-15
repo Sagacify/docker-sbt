@@ -1,0 +1,11 @@
+builder:
+  build: .
+  command: sbt assembly
+  environment:
+    APP_PORT: 8081
+  ports:
+    - "14081:8081"
+  volumes:
+    - ./test-example/build.sbt:/app/build.sbt
+    - ./test-example/Main.scala:/app/Main.scala
+    - ./test-example/target:/app/target
